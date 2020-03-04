@@ -1,0 +1,24 @@
+{{outlet}}
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">Nom</th>
+  </tr>
+</thead>
+
+<tbody>
+  {{#each contact in model}}
+    <tr>
+      <td>{{contact.nom}}</td>
+      <td>{{contact.prenom}}</td>
+      <td>{{contact.email}}</td>
+      <td>
+        <LinkTo class="ui mini icon button" @route="contacts.edit">
+          <i class="edit icon"></i>
+        </LinkTo>
+      </td>
+    </tr>
+  {{/each}}
+</tbody>
+{{#link-to contact.add class="btn btn-primary"}}{{/link-to}}
+</table>
